@@ -1,0 +1,19 @@
+.screens {
+    width: 100%;
+    padding: 120px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 60px;
+    max-width: 1440px;
+    margin: 0 auto;
+
+    &__screen {
+        height: 950px;
+        max-width: 440px;
+        width: 100%;
+        background: $color-white;
+        overflow: hidden;
+        border-radius: 35px;
+        box-shadow: 0 20px 30px -15px rgba($color-black, 0.25);
+    }
+}

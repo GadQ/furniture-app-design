@@ -1,0 +1,23 @@
+.find {
+    &__header-wrapper {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__title {
+        line-height: 36px;
+
+        & + & {
+            margin-left: 20px;
+        }
+
+        &.is-inactive {
+            color: $color-gray-text-light;
+            font-size: 28px;
+        }
+    }
+
+    &__body {
+        padding-top: 0;
+    }
+}

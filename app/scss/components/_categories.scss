@@ -1,0 +1,65 @@
+.categories {
+    &__list {
+        margin: 0;
+        padding: 0;
+        width: calc(100% + 30px);
+        list-style: none;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: auto;
+
+        //trick for scroll covering decorator
+        padding-bottom: 10px;
+        margin-bottom: -10px;
+    }
+
+    &__item {
+        flex-shrink: 0;
+
+        & + & {
+            margin-left: 35px;
+        }
+    }
+
+    &__item-name {
+        border: none;
+        background: transparent;
+        position: relative;
+        font-weight: 600;
+        cursor: pointer;
+        color: $color-gray-text-light;
+        transition: color 250ms ease-out;
+        padding: 10px 5px;
+        font-size: 18px;
+
+        &:after {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 3px;
+            background: $color-mint;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: opacity 250ms ease-out, width 250ms ease-out;
+            opacity: 0;
+        }
+
+        &:hover,
+        &:focus {
+            &:after {
+                opacity: 1;
+            }
+        }
+
+        &.is-active {
+            color: $color-black-text;
+
+            &:after {
+                width: 33px;
+                opacity: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,75 @@
+// Breakpoints
+
+$breakpoints: (
+    mob: 320px,
+    xs: 480px,
+    smr: 640px,
+    sm: 768px,
+    md: 1024px,
+    lg: 1200px,
+    xlg: 1440px,
+    hg: 1680px,
+    hd: 1920px
+);
+
+$media-query: (
+    // min-width:
+    'xs': (min-width: map-get($breakpoints, xs)),
+    'smr': (min-width: map-get($breakpoints, smr)),
+    'sm': (min-width: map-get($breakpoints, sm)),
+    'md': (min-width: map-get($breakpoints, md)),
+    'lg': (min-width: map-get($breakpoints, lg)),
+    'xl': (min-width: map-get($breakpoints, xl)),
+    'xlg': (min-width: map-get($breakpoints, xlg)),
+    'hg': (min-width: map-get($breakpoints, hg)),
+    'hd': (min-width: map-get($breakpoints, hd)),
+    // max-width:
+    'xs-max': (max-width: map-get($breakpoints, xs) - 1),
+    'smr-max': (max-width: map-get($breakpoints, smr) - 1),
+    'sm-max': (max-width: map-get($breakpoints, sm) - 1),
+    'md-max': (max-width: map-get($breakpoints, md) - 1),
+    'lg-max': (max-width: map-get($breakpoints, lg) - 1),
+    'xlg-max': (max-width: map-get($breakpoints, xlg) - 1),
+    'hg-max': (max-width: map-get($breakpoints, hg) - 1),
+    'hd-max': (max-width: map-get($breakpoints, hd) - 1),
+    // orientation:
+    'landscape': (orientation: landscape),
+    'portrait': (orientation: portrait),
+    // print:
+    'print': print
+);
+
+// Colors
+$color-black: #000;
+$color-white: #fff;
+
+$color-gray: #cecece;
+$color-gray-lightest: #f6f6f6;
+
+$color-black-text: #292929;
+
+$color-gray-text: #969696;
+$color-gray-text-light: #bfbfbf;
+
+$color-mint: #85dbd1;
+$color-mint-light: #d7f3f0;
+$color-mint-dark: #7ad6cc;
+$color-mint-darker: darken($color-mint-dark, 5%);
+
+$color-green-light: #ebfbf5;
+$color-green: #6ccda6;
+
+
+// Font sizes
+$fs-1: 12px;
+$fs-2: 14px;
+$fs-3: 16px;
+$fs-4: 18px;
+$fs-5: 20px;
+$fs-6: 24px;
+$fs-7: 28px;
+$fs-8: 32px;
+$fs-9: 36px;
+$fs-10: 40px;
+
+

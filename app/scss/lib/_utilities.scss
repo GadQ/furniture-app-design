@@ -1,0 +1,106 @@
+// ========
+// # Functions
+// ========
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+
+    @return $number;
+}
+
+// ========
+// # Mixins
+// ========
+
+/*
+* Fonts manager.
+* Creates font from name and file name.
+*
+* @access public
+* @param {String} $fontName - Font name
+* @param {String} $fontFileName - Font file name
+*/
+@mixin fontface($font-name, $font-file, $font-weight: 400, $font-style: normal) {
+    $font-base-dir: '../fonts/' !default;
+
+    @font-face {
+        font-family: $font-name;
+        src: url('#{$font-base-dir}#{$font-file}.woff2') format('woff2'),
+        url('#{$font-base-dir}#{$font-file}.woff') format('woff');
+        font-weight: $font-weight;
+        font-style: $font-style;
+    }
+}
+
+
+/*
+* Responsive manager.
+* Creates appropriate media query
+* from breakpoint name and brakpoints list
+*
+* @access public
+* @param {String} $breakpoint - Breakpoint
+* @requires {list} $breakpoints
+*/
+@mixin respond-to($breakpoint) {
+    $raw-query: map-get($media-query, $breakpoint);
+
+    @if $raw-query {
+        $query: if(type-of($raw-query) == 'string', unquote($raw-query), inspect($raw-query));
+
+        @media #{$query} {
+            @content;
+        }
+    } @else {
+        @error 'No value found for `#{$breakpoint}`. '
+        + 'Please make sure it is defined in `$breakpoints` map.';
+    }
+}
+
+/*
+* Clear float at the end of element
+*
+* @access public
+*/
+@mixin clear-float {
+    &:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+
+/*
+* Creates '...' ending if text is too long
+*
+* @access public
+*/
+@mixin ellipsis() {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*
+* Remove select arrow
+*
+* @access public
+*/
+@mixin remove-select-arrow {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &::-ms-expand {
+        display: none;
+    }
+}
+
+@mixin fluid-property($property, $breakpoint-from, $breakpoint-to, $value-from, $value-to) {
+    #{$property}: calc( #{strip-unit($value-from) * 1px} + (100vw - #{map-get($breakpoints, $breakpoint-from)}) / #{strip-unit(map-get($breakpoints, $breakpoint-to) - map_get($breakpoints, $breakpoint-from))} * #{strip-unit($value-to - $value-from)} );
+}

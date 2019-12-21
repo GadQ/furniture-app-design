@@ -1,0 +1,97 @@
+.product-card {
+    $block: &;
+
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 10px -7px rgba($color-black, 0.25);
+    display: block;
+    text-decoration: none;
+    position: relative;
+
+    &:not(#{$block}--find):hover {
+        .product-card__image {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    &__image {
+        height: 208px;
+        width: 100%;
+        overflow: hidden;
+
+        #{$block}--find & {
+            border: 10px solid #fff;
+            border-radius: 16px 16px 0 0;
+            height: 150px;
+
+        }
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            transition: transform 500ms ease-out;
+        }
+    }
+
+    &__description {
+        padding: 11px 10px;
+
+
+        #{$block}--find & {
+            padding: 10px 20px 18px 20px;
+        }
+    }
+
+    &__name {
+        font-weight: 900;
+        color: #333;
+    }
+
+    &__text {
+        font-size: 12px;
+        font-weight: 600;
+        color: $color-gray-text-light;
+        margin-top: 8px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &__price {
+        margin-top: 10px;
+    }
+
+    &__add {
+        background: $color-mint;
+        width: 31px;
+        height: 31px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 3px 5px -2px rgba($color-mint, 0.75);
+        cursor: pointer;
+        position: absolute;
+        right: 14px;
+        bottom: 14px;
+        margin: 0;
+        padding: 0;
+        transition: box-shadow 250ms ease-out, transform 250ms ease-out;
+
+        svg {
+            fill: $color-white;
+            width: 15px;
+            height: 15px;
+        }
+
+        &:hover,
+        &:focus {
+            box-shadow: 0 4px 6px -1px rgba($color-mint, 0.75);
+            transform: translateY(-2px);
+        }
+    }
+}

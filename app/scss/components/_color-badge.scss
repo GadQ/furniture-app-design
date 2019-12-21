@@ -1,0 +1,15 @@
+.color-badge {
+    display: inline-flex;
+    font-size: 12px;
+    align-items: center;
+    color: $color-gray-text-light;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    &__color {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin-right: 9px;
+    }
+}

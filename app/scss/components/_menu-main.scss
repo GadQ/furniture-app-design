@@ -1,0 +1,106 @@
+.menu-main {
+    $block: &;
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        text-align: center;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        background: transparent;
+        color: $color-green;
+        font-weight: 700;
+        font-size: 0.9em;
+        border-radius: 18px;
+        vertical-align: top;
+        padding: 3px;
+        transition: background 250ms ease-out;
+        letter-spacing: 0.5px;
+
+        svg {
+            display: block;
+        }
+
+        .svg-icon-home {
+            fill: $color-gray;
+            transition: fill 250ms ease-out, stroke 250ms ease-out;
+        }
+
+        .svg-icon-compass-circle,
+        .svg-icon-compass-arrow,
+        .svg-icon-mine-line,
+        .svg-icon-mine-circle {
+            fill: transparent;
+            stroke: $color-gray;
+            transition: fill 250ms ease-out, stroke 250ms ease-out;
+        }
+
+        &:hover {
+            .svg-icon-home {
+                fill: $color-green;
+            }
+
+            .svg-icon-compass-circle,
+            .svg-icon-compass-arrow,
+            .svg-icon-mine-line,
+            .svg-icon-mine-circle {
+                stroke: $color-green;
+            }
+        }
+
+        &:hover,
+        &:focus,
+        &.is-active {
+            background: $color-green-light;
+        }
+
+        &.is-active {
+            .svg-icon-home {
+                fill: $color-green;
+            }
+
+            .svg-icon-mine-circle,
+            .svg-icon-compass-circle {
+                fill: $color-green;
+                stroke: $color-green;
+            }
+
+            .svg-icon-mine-line,
+            .svg-icon-compass-arrow {
+                stroke: $color-white;
+            }
+        }
+    }
+
+    &__link-text-wrapper {
+        max-width: 0;
+        transition: max-width 250ms ease-out;
+
+        .is-active & {
+            max-width: 200px;
+            transition: max-width 500ms ease-out;
+        }
+    }
+
+    &__link-text {
+        display: block;
+        margin-top: 2px;
+        padding: 0 10px 0 8px;
+        opacity: 0;
+        transition: opacity 250ms ease-out;
+
+        .is-active & {
+            opacity: 1;
+            transition-delay: 100ms;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.item-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+
+    &__item {
+        position: relative;
+        transform: rotateY(0);
+        transform-style: preserve-3d;
+        transition: transform 300ms ease-out;
+
+        &.is-fliped {
+            transform: rotateY(180deg);
+        }
+
+        @for $i from 1 through 12 {
+            &:nth-child(#{$i}) {
+                transition-delay: ($i - 1) * 75ms;
+            }
+        }
+    }
+
+    &__item-front {
+        backface-visibility: hidden;
+    }
+
+    &__item-back {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: rotateY(-180deg);
+        backface-visibility: hidden;
+        width: 100%;
+        height: 100%;
+    }
+}

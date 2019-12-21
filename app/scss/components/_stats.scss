@@ -1,0 +1,29 @@
+.stats {
+    width: 100%;
+    background: $color-white;
+    display: grid;
+    list-style: none;
+    margin: 0;
+    padding: 20px 0;
+    color: $color-black-text;
+    justify-content: space-between;
+    text-align: center;
+    border-radius: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    box-shadow: 0 20px 20px -15px rgba($color-black, 0.05);
+
+    &__stat-number {
+        display: block;
+        font-size: 22px;
+        font-weight: 700;
+        font-family: 'Lato', sans-serif;
+    }
+
+    &__stat-text {
+        display: block;
+        color: $color-gray-text;
+        font-size: 13px;
+        font-weight: 600;
+        margin-top: 5px;
+    }
+}
