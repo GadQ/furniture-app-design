@@ -25,6 +25,7 @@
         backface-visibility: hidden;
         position: relative;
         z-index: 1;
+        transform: rotateY(0deg);
     }
 
     &__item-back {
