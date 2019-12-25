@@ -101,6 +101,7 @@ const config = {
             './app/js/product-add.js',
             './app/js/search.js',
             './app/js/tabs.js',
+            './app/js/cart.js',
             './app/js/main.js'
         ],
         output: './dist/js',
