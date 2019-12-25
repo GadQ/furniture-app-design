@@ -2,10 +2,17 @@
     &__header-wrapper {
         display: flex;
         align-items: flex-end;
+        height: 41px;
     }
 
     &__title {
-        line-height: 36px;
+        border: none;
+        background: none;
+        padding: 0;
+        cursor: pointer;
+        transition: transform 250ms ease-out, font-size 250ms ease-out, color 250ms ease-out;
+        will-change: font-size;
+        margin-bottom: 0;
 
         & + & {
             margin-left: 20px;
@@ -14,10 +21,101 @@
         &.is-inactive {
             color: $color-gray-text-light;
             font-size: 28px;
+            transform: translateY(-1px);
+        }
+    }
+
+    &__sections {
+        display: flex;
+        align-items: stretch;
+        overflow: hidden;
+        padding-left: 0;
+        padding-right: 0;
+        transform-style: preserve-3d;
+        perspective: 2000px;
+    }
+
+    &__section {
+        transition: transform 500ms ease-out, opacity 500ms ease-out;
+
+        &--left {
+            transform-origin: 0 50%;
+
+            &.is-inactive {
+                transform: rotateY(-90deg);
+                opacity: 0;
+            }
+        }
+
+        &--right {
+            transform-origin: 100% 50%;
+            transform: translateX(-100%) rotate(0deg);
+
+            &.is-inactive {
+                transform: translateX(-100%) rotateY(90deg);
+                opacity: 0;
+            }
         }
     }
 
     &__body {
         padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    &__content {
+        flex-grow: 1;
+        margin-top: 30px;
+        margin-right: -20px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        overflow: auto;
+    }
+
+    &__cart-button {
+        background: $color-white;
+        width: 60px;
+        height: 60px;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 20px;
+        bottom: 25px;
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0 10px 20px -5px rgba($color-black, 0.20);
+        cursor: pointer;
+
+        &:after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $color-mint;
+            position: absolute;
+            left: 38px;
+            top: 17px;
+        }
+
+        &:hover,
+        &:focus {
+            .svg-icon-cart {
+                fill: $color-mint;
+            }
+        }
+    }
+
+    .svg-icon-cart {
+        fill: $color-black-text;
+        transition: fill 250ms ease-out;
     }
 }

@@ -18,9 +18,9 @@
     <div class="screens__screen">
         <?php include('./components/_find.php') ?>
     </div>
-    <div class="screens__screen">
-        <?php include('./components/_cart.php') ?>
-    </div>
+<!--    <div class="screens__screen">-->
+<!--        --><?php //include('./components/_cart.php') ?>
+<!--    </div>-->
 </div>
 
 </body>

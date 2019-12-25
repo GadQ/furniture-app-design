@@ -95,6 +95,12 @@ const config = {
     js: {
         input: [
             './app/js/lib/countUp.js',
+            './app/js/categories.js',
+            './app/js/find-sections.js',
+            './app/js/menu.js',
+            './app/js/product-add.js',
+            './app/js/search.js',
+            './app/js/tabs.js',
             './app/js/main.js'
         ],
         output: './dist/js',

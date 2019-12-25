@@ -66,7 +66,7 @@
                 </li>
             </ul>
 
-            <div class="tabs__content">
+            <div class="tabs__content js-tabs-content">
                 <div class="item-grid">
                     <div class="item-grid__item js-grid-item">
                         <div class="item-grid__item-front">

@@ -1,80 +1,125 @@
 <div class="app find">
     <header class="app__header find__header">
         <div class="find__header-wrapper">
-            <h2 class="app__screen-title find__title h1">Furniture</h2>
-            <h2 class="app__screen-title find__title h1 is-inactive">Renovation</h2>
+            <button class="app__screen-title find__title h1 js-section-change" data-section="furniture">Furniture</button>
+            <button class="app__screen-title find__title h1 js-section-change is-inactive" data-section="renovation">Renovation</button>
         </div>
     </header>
-    <div class="app__body find__body">
-        <div class="categories">
-            <ul class="categories__list js-categories-list">
-                <li class="categories__item">
-                    <button class="categories__item-name js-category is-active" data-category="sofa" type="button">Sofa</button>
-                </li>
-                <li class="categories__item">
-                    <button class="categories__item-name js-category" data-category="bed" type="button">Bed</button>
-                </li>
-                <li class="categories__item">
-                    <button class="categories__item-name js-category" data-category="cabinet" type="button">Cabinet</button>
-                </li>
-                <li class="categories__item">
-                    <button class="categories__item-name js-category" data-category="stool" type="button">Stool</button>
-                </li>
-                <li class="categories__item">
-                    <button class="categories__item-name js-category" data-category="table" type="button">Table</button>
-                </li>
-                <li class="categories__item">
-                    <button class="categories__item-name js-category" data-category="closet" type="button">Closet</button>
-                </li>
-                <li class="categories__item">
-                    <button class="categories__item-name js-category" data-category="sofa" type="button">Sofa</button>
-                </li>
-                <li class="categories__item">
-                    <button class="categories__item-name js-category" data-category="bed" type="button">Bed</button>
-                </li>
-                <li class="categories__item">
-                    <button class="categories__item-name js-category" data-category="cabinet" type="button">Cabinet</button>
-                </li>
-                <li class="categories__item">
-                    <button class="categories__item-name js-category" data-category="stool" type="button">Stool</button>
-                </li>
-                <li class="categories__item">
-                    <button class="categories__item-name js-category" data-category="table" type="button">Table</button>
-                </li>
-                <li class="categories__item">
-                    <button class="categories__item-name js-category" data-category="closet" type="button">Closet</button>
-                </li>
-            </ul>
-        </div>
-        <div class="item-grid">
-            <div class="item-grid__item js-grid-item">
-                <div class="item-grid__item-front">
-                    <div class="product-card product-card--find">
-                        <div class="product-card__image">
-                            <img src="./images/sofa1.jpg" alt="">
+    <div class="app__body find__sections">
+        <div class="find__body find__section is-active find__section--left js-section" data-section="furniture">
+            <div class="categories">
+                <ul class="categories__list js-categories-list">
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category is-active" data-category="sofa" type="button">
+                            Sofa
+                        </button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="bed" type="button">Bed</button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="cabinet" type="button">Cabinet
+                        </button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="chair" type="button">Chair</button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="table" type="button">Table</button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="sofa" type="button">Sofa</button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="bed" type="button">Bed</button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="cabinet" type="button">Cabinet
+                        </button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="chair" type="button">Chair</button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="table" type="button">Table</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="find__content">
+                <div class="item-grid js-categories-content" data-side="back">
+                    <?php for ($i = 0; $i < 6; $i++): ?>
+                        <div class="item-grid__item js-grid-item">
+                            <div class="item-grid__item-front js-grid-item-front"></div>
+                            <div class="item-grid__item-back js-grid-item-back"></div>
                         </div>
-
-                        <div class="product-card__description">
-                            <div class="product-card__name">Comfy chair</div>
-                            <div class="product-card__text">Free mind and body</div>
-                            <div class="product-card__price price">$ 299</div>
-
-                            <button class="product-card__add">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="12"
-                                    viewBox="0 0 12 12"
-                                    height="12">
-                                    <path d="m 10.203125,5.1666667 -3.3697917,0 0,-3.3697917 C 6.8333333,1.356775 6.4609375,1 6,1 5.5390625,1 5.1666667,1.356775 5.1666667,1.796875 l 0,3.3697917 -3.3697917,0 C 1.3567708,5.1666667 1,5.5390583 1,6 1,6.4609417 1.3567708,6.8333333 1.796875,6.8333333 l 3.3697917,0 0,3.3697917 C 5.1666667,10.643225 5.5390625,11 6,11 6.4609375,11 6.8333333,10.643225 6.8333333,10.203125 l 0,-3.3697917 3.3697917,0 C 10.643229,6.8333333 11,6.4609417 11,6 11,5.5390583 10.643229,5.1666667 10.203125,5.1666667 Z" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="item-grid__item-back">
-
+                    <?php endfor; ?>
                 </div>
             </div>
+
+            <button class="find__cart-button" type="button">
+                <span class="sr-only">Cart</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon-cart" viewBox="0 0 30 30" width="30" height="30">
+                    <path d="M25.38 25a2.5 2.5 0 01-2.5 2.5 2.5 2.5 0 01-2.5-2.5 2.5 2.5 0 012.5-2.5 2.5 2.5 0 012.5 2.5zM14.4 25a2.5 2.5 0 01-2.5 2.5A2.5 2.5 0 019.4 25a2.5 2.5 0 012.5-2.5 2.5 2.5 0 012.5 2.5zM6.48 6.4l-.44-1.7A3 3 0 003.12 2.5H1v1.96h2.12a1 1 0 011 .74l2.7 10.7.91 3.38a3 3 0 002.95 2.22h14.98v-1.95H10.68a1 1 0 01-1-.74L9 16.4l15.88-.63a2.97 2.97 0 002.24-2.14L29 6.4zm18.74 6.75a1 1 0 01-.75.71l-15.92.63-1.57-6.13h19.5z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="find__body find__section find__section--right js-section is-inactive" data-section="renovation">
+            <div class="categories">
+                <ul class="categories__list js-categories-list">
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category is-active" data-category="sofa" type="button">
+                            Sofa
+                        </button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="bed" type="button">Bed</button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="cabinet" type="button">Cabinet
+                        </button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="chair" type="button">Chair</button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="table" type="button">Table</button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="sofa" type="button">Sofa</button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="bed" type="button">Bed</button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="cabinet" type="button">Cabinet
+                        </button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="chair" type="button">Chair</button>
+                    </li>
+                    <li class="categories__item">
+                        <button class="categories__item-name js-category" data-category="table" type="button">Table</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="find__content">
+                <div class="item-grid js-categories-content" data-side="back">
+                    <?php for ($i = 0; $i < 6; $i++): ?>
+                        <div class="item-grid__item js-grid-item">
+                            <div class="item-grid__item-front js-grid-item-front"></div>
+                            <div class="item-grid__item-back js-grid-item-back"></div>
+                        </div>
+                    <?php endfor; ?>
+                </div>
+            </div>
+
+            <button class="find__cart-button" type="button">
+                <span class="sr-only">Cart</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon-cart" viewBox="0 0 30 30" width="30" height="30">
+                    <path d="M25.38 25a2.5 2.5 0 01-2.5 2.5 2.5 2.5 0 01-2.5-2.5 2.5 2.5 0 012.5-2.5 2.5 2.5 0 012.5 2.5zM14.4 25a2.5 2.5 0 01-2.5 2.5A2.5 2.5 0 019.4 25a2.5 2.5 0 012.5-2.5 2.5 2.5 0 012.5 2.5zM6.48 6.4l-.44-1.7A3 3 0 003.12 2.5H1v1.96h2.12a1 1 0 011 .74l2.7 10.7.91 3.38a3 3 0 002.95 2.22h14.98v-1.95H10.68a1 1 0 01-1-.74L9 16.4l15.88-.63a2.97 2.97 0 002.24-2.14L29 6.4zm18.74 6.75a1 1 0 01-.75.71l-15.92.63-1.57-6.13h19.5z"/>
+                </svg>
+            </button>
         </div>
     </div>
     <div class="app__footer">
